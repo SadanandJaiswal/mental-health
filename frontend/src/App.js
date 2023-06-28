@@ -9,6 +9,9 @@ import Sleep from "./pages/Sleep";
 import Affirmation from "./pages/Affirmation";
 import Sidebar from "./components/Sidebar";
 
+
+import music1 from "./components/songs/yt1s.com - Relaxing Sounds.mp3"
+
 function App() {
   return (
     <>
