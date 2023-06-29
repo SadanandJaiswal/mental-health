@@ -152,7 +152,7 @@ const Sidebar = ({ children }) => {
                 ))}
             </section>
         </motion.div>
-        <main>
+        <main style={{width:"100%"}}>
             { children }
         </main>
     </div>
