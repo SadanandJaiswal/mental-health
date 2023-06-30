@@ -1,8 +1,8 @@
 import music1 from "../components/songs/yt1s.com - Relaxing Sounds.mp3"
 import music2 from "../components/songs/yt1s.com - Relaxing Sounds.mp3"
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef , useEffect} from 'react';
 import ReactPlayer from 'react-player';
-import "./Music.css";
+import "../style//Music.css";
 
 const AudioPlayer = () => {
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
@@ -10,6 +10,7 @@ const AudioPlayer = () => {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [playAllBtn,setPlayAll] = useState(false);
+  const [musicLike,setMuiscLike] = useState([])
 
 
 
@@ -100,6 +101,36 @@ const AudioPlayer = () => {
       playNextSong();
     };
 
+    // const setInitialLikes = (index)=>{
+    //   setMuiscLike((likes)=> [...likes,0]);
+    // }
+
+    useEffect(() => {
+      // Initialize musicLike state once when the component mounts
+      const initialLikes = songs.map(() => 0);
+      setMuiscLike(initialLikes);
+    }, []);
+
+
+
+    const handelLike = (index)=>{
+      setMuiscLike((likes)=>{
+        return (
+          likes.map((val,i)=>{
+              if(i===index)
+              {
+                if(val===0)
+                {
+                  return 1;
+                }
+                return 0;
+              }
+              return val;
+          })
+        )
+      })
+    }
+
 
   return (
     <>
@@ -170,17 +201,20 @@ const AudioPlayer = () => {
                 </div>
                 <div className="liked-song">
                   {
-                    (currentSongIndex==index)?
-                  
-                    <div class="music-wave">
-                      <div class="wave wave-1"></div>
-                      <div class="wave wave-2"></div>
-                      <div class="wave wave-3"></div>
-                      <div class="wave wave-4"></div>
-                      <div class="wave wave-5"></div>
-                  </div>
+                    ((currentSongIndex==index) && isPlaying )?
+                    
+                    <div className="like_wave">
+                      <div class="music-wave">
+                        <div class="wave wave-1"></div>
+                        <div class="wave wave-2"></div>
+                        <div class="wave wave-3"></div>
+                        <div class="wave wave-4"></div>
+                        <div class="wave wave-5"></div>
+                    </div>
+                    <button className="like" onClick={()=> handelLike(index)}>{musicLike[index]===0?"🤍":"💗"}</button>
+                    </div>
                   :
-                  "🤍💓"
+                  <button className="like" onClick={()=> handelLike(index)}>{musicLike[index]===0?"🤍":"💗"}</button>
                   
                   }
                 </div>

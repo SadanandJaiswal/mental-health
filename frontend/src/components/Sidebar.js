@@ -9,6 +9,7 @@ import { ImMusic } from "react-icons/im";
 import { CgProfile } from "react-icons/cg";
 import { GiNightSleep } from "react-icons/gi";
 import { BiAnalyse, BiSearch } from "react-icons/bi";
+import { FaBrain } from 'react-icons/fa';
 
 const routes = [
     {
@@ -25,6 +26,11 @@ const routes = [
         path: '/affirmation',
         name: 'Affirmation',
         icon: <TfiThought />
+    },
+    {
+        path: '/MentalDisorder',
+        name: 'MentalDisorder',
+        icon: <FaBrain />
     },
     {
         path: '/meditation',

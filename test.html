@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="steps">
+        <button tabindex="1">Step 1</button>
+        <div class="step-content">Step 1 Content</div>
+        
+        <button tabindex="2">Step 2</button>
+        <div class="step-content">Step 2 Content</div>
+        
+        <button tabindex="3">Step 3</button>
+        <div class="step-content">Step 3 Content</div>
+      </div>
+
+
+      <!-- <div class="steps">
+        <input type="checkbox" id="step1" class="step-checkbox" checked />
+        <label for="step1" class="step-button">Step 1</label>
+        <div class="step-content">
+          Step 1 Content
+        </div>
+        
+        <input type="checkbox" id="step2" class="step-checkbox" />
+        <label for="step2" class="step-button">Step 2</label>
+        <div class="step-content">
+          Step 2 Content
+        </div>
+        
+        <input type="checkbox" id="step3" class="step-checkbox" />
+        <label for="step3" class="step-button">Step 3</label>
+        <div class="step-content">
+          Step 3 Content
+        </div>
+      </div> -->
+      
+      
+      
+      
+</body>
+
+<style>
+    /*
+    .step-content {
+        display: none;
+      }
+      
+      button:focus + .step-content {
+        display: block;
+      }
+      
+      
+      .step-content {
+          display: none;
+        }
+      
+      .step-radio:checked ~ .step-content {
+        display: block;
+    }
+    */
+    
+      .step-content {
+        display: none;
+      }
+      
+      .step-checkbox:checked ~ .step-content {
+        display: block;
+      }
+
+      body{
+        background-image: linear-gradient(to bottom ,blue 1%,black,black,purple ,blue,rgb(52, 52, 180),blue,purple);
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 100vh;
+      }
+      
+      
+      
+</style>
+</html>

@@ -12,6 +12,44 @@ router.get('/users',(req,res)=>{
     })
 });
 
+router.get('/checking',(req,res)=>{
+    res.json({
+        status:true,
+        msg:"every thing is fine",
+        route:"user"
+    })
+})
+
+router.get('/trialregister',(req,res)=>{
+    res.json({
+        name:req.query.name,
+        email:req.query.email,
+        status:true
+    })
+})
+
+router.get('/trialData',(req,res)=>{
+    res.json(
+        [
+            {
+                name:"saddy",
+                email:"saddy92@gmail.com",
+                password:"12345lkjlhjgf@@C4244324#DSFFSDFD#$@$$"
+            },
+            {
+                name:"maddy",
+                email:"maddy92@gmail.com",
+                password:"12345lkjlhjgf@@C4244324#DSFFSDFD#$@$$"
+            },
+            {
+                name:"sandy",
+                email:"sandy92@gmail.com",
+                password:"12345lkjlhjgf@@C4244324#DSFFSDFD#$@$$"
+            }
+        ]
+    )
+})
+
 router.post('/register',registerUser);
 
 router.post('/login',loginUser);
